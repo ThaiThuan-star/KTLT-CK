@@ -1,0 +1,1001 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>426</width>
+    <height>412</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background:  #CFEBFC</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_4">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_14"/>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_15"/>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLineEdit" name="txt_search">
+        <property name="styleSheet">
+         <string notr="true">background: white;
+font-family: Times New Roman;
+font-size: 14px</string>
+        </property>
+        <property name="placeholderText">
+         <string>Nhập MSSV cần tìm kiếm</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Minimum</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>18</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_search">
+        <property name="styleSheet">
+         <string notr="true">background: white;
+font-family: Times New Roman;
+font-size: 14px;
+font-weight: bold
+</string>
+        </property>
+        <property name="text">
+         <string>Tìm kiếm</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <spacer name="horizontalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>38</width>
+          <height>17</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="styleSheet">
+         <string notr="true">background: lightskyblue;
+font-family: Times New Roman;
+font-weight: bold;
+font-size: 14px;
+</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; color:#ffffff;&quot;&gt;QUẢN LÝ SINH VIÊN&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="styleSheet">
+         <string notr="true">background: lightskyblue;
+font-family: Times New Roman;
+font-weight: bold;
+</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Họ và tên:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_4">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Minimum</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>18</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="txt_ho_ten">
+        <property name="styleSheet">
+         <string notr="true">background: white;
+font-family: Times New Roman;
+font-size: 14px</string>
+        </property>
+        <property name="placeholderText">
+         <string>Nhập họ và tên</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="styleSheet">
+         <string notr="true">background: lightskyblue;
+font-family: Times New Roman;
+font-weight: bold;
+</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;MSSV&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_5">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>18</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="txt_mssv">
+        <property name="styleSheet">
+         <string notr="true">background: white;
+font-family: Times New Roman;
+font-size: 14px</string>
+        </property>
+        <property name="placeholderText">
+         <string>Nhập MSSV</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_6">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Preferred</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>18</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_5">
+        <property name="styleSheet">
+         <string notr="true">background: lightskyblue;
+font-family: Times New Roman;
+font-weight: bold;
+</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Khoa&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboBox">
+        <property name="styleSheet">
+         <string notr="true">background: white;
+font-size: 14px;
+font-family: Times New Roman
+</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>Hệ thống thông tin</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Kinh tế đối ngoại</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Tài chính ngân hàng</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Toán kinh tế</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <item>
+       <widget class="QLabel" name="label_4">
+        <property name="styleSheet">
+         <string notr="true">background: lightskyblue;
+font-family: Times New Roman;
+font-weight: bold;
+</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Lớp&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_8">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Preferred</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>18</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="txt_lop">
+        <property name="styleSheet">
+         <string notr="true">background: white;
+font-family: Times New Roman;
+font-size: 14px</string>
+        </property>
+        <property name="placeholderText">
+         <string>Nhập lớp</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_7">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Minimum</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>18</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_add_file">
+        <property name="styleSheet">
+         <string notr="true">background: white;
+font-family: Times New Roman;
+font-size: 14px;
+font-weight: bold
+</string>
+        </property>
+        <property name="text">
+         <string>Thêm file</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_6">
+      <item>
+       <widget class="QLabel" name="label_6">
+        <property name="styleSheet">
+         <string notr="true">background: lightskyblue;
+font-family: Times New Roman;
+font-weight: bold;
+</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;GPA&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_10">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Preferred</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>18</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="txt_gpa">
+        <property name="styleSheet">
+         <string notr="true">background: white;
+font-family: Times New Roman;
+font-size:14px</string>
+        </property>
+        <property name="placeholderText">
+         <string>Nhập GPA</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_9">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Preferred</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>18</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_add_sv">
+        <property name="styleSheet">
+         <string notr="true">background: white;
+font-family: Times New Roman;
+font-size: 14px;
+font-weight: bold
+</string>
+        </property>
+        <property name="text">
+         <string>Thêm sinh viên</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btn_show">
+      <property name="styleSheet">
+       <string notr="true">background: lightskyblue;
+font-family: Times New Roman;
+font-size: 14px;
+font-weight: bold;
+color: white</string>
+      </property>
+      <property name="text">
+       <string>Xem danh sách sinh viên</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_13">
+      <item>
+       <spacer name="horizontalSpacer_12">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Ignored</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QStackedWidget" name="stackedWidget">
+        <property name="styleSheet">
+         <string notr="true">background: white</string>
+        </property>
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="page">
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_12">
+            <item>
+             <spacer name="horizontalSpacer_11">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Fixed</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_12">
+              <property name="styleSheet">
+               <string notr="true">font-family: Times New Roman</string>
+              </property>
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600; color:#0055ff;&quot;&gt;DANH SÁCH CÁC SINH VIÊN CẦN THÊM&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_15">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Fixed</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="tbl_ds_them">
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="showGrid">
+             <bool>true</bool>
+            </property>
+            <attribute name="horizontalHeaderCascadingSectionResizes">
+             <bool>false</bool>
+            </attribute>
+            <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+             <bool>false</bool>
+            </attribute>
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <column>
+             <property name="text">
+              <string>Tên</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>MSSV</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Lớp</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Khoa</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>GPA</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Ngày thêm</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_confirm">
+            <property name="styleSheet">
+             <string notr="true">background: lightskyblue;
+font-family: Times New Roman;
+font-size: 14px;
+font-weight: bold;
+color: white</string>
+            </property>
+            <property name="text">
+             <string>Xác nhận thêm </string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="page_2">
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <item>
+             <widget class="QLabel" name="label_8">
+              <property name="styleSheet">
+               <string notr="true">font-family: Times New Roman;
+font-size: 14px;
+font-weight: bold</string>
+              </property>
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; color:#0055ff;&quot;&gt;THÔNG TIN SINH VIÊN TÌM KIẾM&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_7">
+              <item>
+               <spacer name="horizontalSpacer_21">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Preferred</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>18</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_7">
+                <property name="styleSheet">
+                 <string notr="true">background: lightskyblue;
+font-family: Times New Roman;
+font-size: 14px</string>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Tên&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_16">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Fixed</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>18</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="txt_ten_search">
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_22">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Preferred</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>18</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_8">
+              <item>
+               <spacer name="horizontalSpacer_23">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Preferred</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>18</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_13">
+                <property name="styleSheet">
+                 <string notr="true">background: lightskyblue;
+font-family: Times New Roman;
+font-size: 14px</string>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;MSSV&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_24">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Fixed</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>18</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="txt_mssv_search">
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_25">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Preferred</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>18</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_9">
+              <item>
+               <spacer name="horizontalSpacer_26">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Preferred</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>18</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_14">
+                <property name="styleSheet">
+                 <string notr="true">background: lightskyblue;
+font-family: Times New Roman;
+font-size: 14px</string>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Lớp&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_27">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Fixed</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>18</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="txt_lop_search">
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_28">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Preferred</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>18</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_10">
+              <item>
+               <spacer name="horizontalSpacer_29">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Preferred</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>18</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_15">
+                <property name="styleSheet">
+                 <string notr="true">background: lightskyblue;
+font-family: Times New Roman;
+font-size: 14px</string>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Khoa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_30">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Fixed</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>18</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="txt_khoa_search">
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_31">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Preferred</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>18</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_11">
+              <item>
+               <spacer name="horizontalSpacer_32">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Preferred</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>18</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_16">
+                <property name="styleSheet">
+                 <string notr="true">background: lightskyblue;
+font-family: Times New Roman;
+font-size: 14px</string>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;GPA&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_33">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Fixed</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>18</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="txt_gpa_search">
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_34">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Preferred</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>18</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_13">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Ignored</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>426</width>
+     <height>18</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

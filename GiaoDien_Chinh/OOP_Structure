@@ -1,0 +1,13 @@
+Sơ đồ xử lý (flow):
+
+Mở app
+   ↓
+Đọc JSON → lưu vào RAM (dict / object)
+
+Người dùng thao tác
+   ↓
+thêm / sửa / xóa
+
+Nhấn lưu
+   ↓
+ghi lại JSON
