@@ -11,3 +11,11 @@ thêm / sửa / xóa
 Nhấn lưu
    ↓
 ghi lại JSON
+
+Cấu trúc dl:
+
+lop_416.ds_sv = {
+    "SV01": sv,
+    "SV02":sv2,
+    "SV03":sv3
+}

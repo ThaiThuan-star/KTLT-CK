@@ -126,4 +126,5 @@ class MainWindow(Ui_MainWindow,QMainWindow):
         with open("ds_sv.json", "w", encoding="utf-8") as file:
             json.dump(existing_data, file, indent=4, ensure_ascii=False)
         QMessageBox.information(self, "Thông báo", "Thêm thành công!")
+        self.stackedWidget.hide()
         return
