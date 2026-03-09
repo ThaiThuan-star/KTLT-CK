@@ -1,6 +1,5 @@
-from PyQt6.QtWidgets import QTableWidgetItem,QMessageBox,QMainWindow
+from PyQt6.QtWidgets import QTableWidgetItem,QMessageBox,QMainWindow,QHeaderView
 from MainWindow import Ui_MainWindow
-from datetime import datetime
 from CSinhVien import *
 from CLop import *
 from CKhoa import *
@@ -13,6 +12,7 @@ class MainWindow(Ui_MainWindow,QMainWindow):
         super().setupUi(MainWindow)
         self.MainWindow=MainWindow
 
+        self.tbl_ds_them.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
         # Khởi tạo đối tượng quản lý (Tự động load JSON và phân khoa/lớp)
         self.qly=QuanLySinhVien()
 
@@ -20,6 +20,22 @@ class MainWindow(Ui_MainWindow,QMainWindow):
     def process(self):
 
         #Hiển thị danh sách sinh viên (Khang làm)
+        # Hiển thị danh sách sinh viên
+        # Xóa trắng bảng trước khi bỏ dữ liệu vào ==> tránh trùng lặp
+        self.tbl_ds_them.setRowCount(0)
+
+        # Dựa vào class qly, lặp qua tất cả các lớp và sinh viên để đưa lên bảng
+        for lop in self.qly.ds_lop.values():
+            for sv in lop.ds_sv.values():
+                row = self.tbl_ds_them.rowCount()
+                self.tbl_ds_them.insertRow(row)
+
+                # Nạp thông tin từ đối tượng SinhVien (sv) lên Table
+                self.tbl_ds_them.setItem(row, 0, QTableWidgetItem(sv.mssv))
+                self.tbl_ds_them.setItem(row, 1, QTableWidgetItem(sv.ten))
+                self.tbl_ds_them.setItem(row, 2, QTableWidgetItem(sv.lop))
+                self.tbl_ds_them.setItem(row, 3, QTableWidgetItem(sv.khoa))
+                self.tbl_ds_them.setItem(row, 4, QTableWidgetItem(str(sv.gpa)))
 
         self.btn_delete_sv.clicked.connect(self.delete_sv)
         self.btn_add_sv.clicked.connect(self.add_sv)
@@ -33,7 +49,6 @@ class MainWindow(Ui_MainWindow,QMainWindow):
         lop = self.box_lop.currentText().strip()
         gpa = self.txt_gpa.text().strip()
         khoa = self.comboBox.currentText().strip()
-        ngay_them = datetime.now().strftime("%d/%m/%Y")
         if (not self.txt_ho_ten.text() or not self.txt_gpa.text()
                 or not self.box_lop.currentText() or not self.txt_mssv.text() ) :
             QMessageBox.warning(self, "Lỗi nhập liệu", "Nhập thiếu dữ liệu")
@@ -45,16 +60,7 @@ class MainWindow(Ui_MainWindow,QMainWindow):
             return
 
         #Kiểm tra xem sinh viên đã có trong ds chưa
-        existing_data = {}
-        filename = "ds_sv.json"
-        if os.path.exists(filename):
-            try:
-                with open(filename, "r", encoding="utf-8") as file:
-                    existing_data = json.load(file)
-            except json.JSONDecodeError:
-                # Bỏ qua nếu file rỗng hoặc lỗi định dạng, khởi tạo lại dictionary rỗng
-                existing_data = {}
-        if mssv in existing_data:
+        if mssv in self.qly.ds_sv:
             QMessageBox.warning(self, "Lỗi", "Sinh viên đã tồn tại")
             return
 
@@ -69,22 +75,12 @@ class MainWindow(Ui_MainWindow,QMainWindow):
         # Set dữ liệu đúng cột
         # Phải dùng QTableWidgetItem vì các ô không chỉ chứa vban mà còn chứa nhiều dl như font-size,...
 
-        self.tbl_ds_them.setItem(row, 0, QTableWidgetItem(ten))
-        self.tbl_ds_them.setItem(row, 1, QTableWidgetItem(mssv))
+        self.tbl_ds_them.setItem(row, 0, QTableWidgetItem(mssv))
+        self.tbl_ds_them.setItem(row, 1, QTableWidgetItem(ten))
         self.tbl_ds_them.setItem(row, 2, QTableWidgetItem(lop))
         self.tbl_ds_them.setItem(row, 3, QTableWidgetItem(khoa))
         self.tbl_ds_them.setItem(row, 4, QTableWidgetItem(gpa))
-        self.tbl_ds_them.setItem(row, 5, QTableWidgetItem(ngay_them))
 
-        existing_data[mssv] = {
-            "Tên": ten,
-            "Lớp": lop,
-            "Khoa": khoa,
-            "Gpa": float(gpa),
-            "Ngày thêm": ngay_them
-        }
-        with open("ds_sv.json", "w", encoding="utf-8") as file:
-            json.dump(existing_data, file, indent=4, ensure_ascii=False)
         QMessageBox.information(self, "Thông báo", "Thêm thành công!")
         self.clear_input()
         return

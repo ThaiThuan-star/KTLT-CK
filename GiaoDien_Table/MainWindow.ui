@@ -157,6 +157,12 @@
       <property name="styleSheet">
        <string notr="true">background: white;</string>
       </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="dragDropOverwriteMode">
+       <bool>false</bool>
+      </property>
       <property name="selectionBehavior">
        <enum>QAbstractItemView::SelectRows</enum>
       </property>
@@ -165,12 +171,12 @@
       </attribute>
       <column>
        <property name="text">
-        <string>Tên</string>
+        <string>MSSV</string>
        </property>
       </column>
       <column>
        <property name="text">
-        <string>MSSV</string>
+        <string>Tên</string>
        </property>
       </column>
       <column>
@@ -186,11 +192,6 @@
       <column>
        <property name="text">
         <string>GPA</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Ngày thêm</string>
        </property>
       </column>
      </widget>
