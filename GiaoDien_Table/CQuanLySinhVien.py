@@ -23,6 +23,7 @@ class QuanLySinhVien:
             "417": Lop("417"),
             "418": Lop("418")
         }
+        self.ds_sv={}
 
         self.load_json()
         self.add_lop()

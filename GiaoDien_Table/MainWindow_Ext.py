@@ -15,7 +15,8 @@ class MainWindow(Ui_MainWindow,QMainWindow):
         self.tbl_ds_them.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
         # Khởi tạo đối tượng quản lý (Tự động load JSON và phân khoa/lớp)
         self.qly=QuanLySinhVien()
-
+        self.tbl_ds_them.itemClicked.connect(self.hien_thi_thong_tin)
+        self.btn_clear.clicked.connect(self.clear_input)
         self.process()
     def process(self):
 
@@ -88,8 +89,54 @@ class MainWindow(Ui_MainWindow,QMainWindow):
         self.txt_ho_ten.setText("")
         self.txt_mssv.setText("")
         self.txt_gpa.setText("")
+    def hien_thi_thong_tin(self):
+        # 1. Lấy vị trí dòng (row) đang được người dùng click
+        row = self.tbl_ds_them.currentRow()
+
+        # Nếu chưa chọn dòng nào hợp lệ thì bỏ qua
+        if row < 0:
+            return
+
+        # 2. Lấy nội dung từng cột trong dòng đó
+        # (Lưu ý: Dựa theo code của bạn thì Cột 0: MSSV, Cột 1: Tên, Cột 2: Lớp, Cột 3: Khoa, Cột 4: GPA)
+        mssv = self.tbl_ds_them.item(row, 0).text()
+        ten = self.tbl_ds_them.item(row, 1).text()
+        lop = self.tbl_ds_them.item(row, 2).text()
+        khoa = self.tbl_ds_them.item(row, 3).text()
+        gpa = self.tbl_ds_them.item(row, 4).text()
+
+        # 3. Đẩy dữ liệu lên các ô TextBox
+        self.txt_mssv.setText(mssv)
+        self.txt_ho_ten.setText(ten)
+        self.txt_gpa.setText(gpa)
+
+        # 4. Đẩy dữ liệu lên ComboBox Khoa
+        self.comboBox.setCurrentText(khoa)
+
     def delete_sv(self):
-        pass
+
+        row = self.tbl_ds_them.currentRow()
+        if row == -1:
+            QMessageBox.warning(self, "Thông báo", "Hãy chọn sinh viên cần xóa")
+            return
+
+        mssv = self.tbl_ds_them.item(row, 0).text()
+
+        reply = QMessageBox.question(
+            self,
+            "Xác nhận xóa",
+            f"Bạn có chắc muốn xóa sinh viên {mssv} ?",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No
+        )
+        if reply == QMessageBox.StandardButton.Yes:
+            # xóa trong dữ liệu
+            del self.qly.ds_sv[mssv]
+
+            # xóa trong bảng
+            self.tbl_ds_them.removeRow(row)
+
+            QMessageBox.information(self, "Thông báo", "Đã xóa sinh viên")
+            return
     def edit_sv(self):
         pass
     def loc_sv(self):
