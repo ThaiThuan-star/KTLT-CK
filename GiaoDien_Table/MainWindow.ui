@@ -162,6 +162,11 @@
           <string>Xếp theo GPA</string>
          </property>
         </item>
+        <item>
+         <property name="text">
+          <string>Xếp theo MSSV</string>
+         </property>
+        </item>
        </widget>
       </item>
       <item>
@@ -307,6 +312,11 @@
          </property>
          <item>
           <property name="text">
+           <string>Khoa</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
            <string>Hệ thống thông tin</string>
           </property>
          </item>
@@ -349,6 +359,11 @@
          <property name="styleSheet">
           <string notr="true">background: white; padding: 4px;</string>
          </property>
+         <item>
+          <property name="text">
+           <string>Lớp</string>
+          </property>
+         </item>
          <item>
           <property name="text">
            <string>411</string>
