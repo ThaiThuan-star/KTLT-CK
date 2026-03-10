@@ -18,6 +18,8 @@ class MainWindow(Ui_MainWindow,QMainWindow):
         self.tbl_ds_them.itemClicked.connect(self.hien_thi_thong_tin)
         self.btn_clear.clicked.connect(self.clear_input)
         self.process()
+        self.cb_loc_khoa.currentTextChanged.connect(self.loc_lop)
+
     def process(self):
 
         #Hiển thị danh sách sinh viên (Khang làm)
@@ -44,6 +46,45 @@ class MainWindow(Ui_MainWindow,QMainWindow):
         self.btn_loc.clicked.connect(self.loc_sv)
         self.btn_search.clicked.connect(self.search_sv)
 
+    def loc_lop(self):
+        self.cb_loc_lop.setCurrentIndex(0)
+        khoa=self.cb_loc_khoa.currentText()
+        view=self.cb_loc_lop.view() #Lấy danh sách hiển thị của comboBox : 411,412,413...
+        # hiện lại toàn bộ lớp trước
+        for i in range(self.cb_loc_lop.count()):
+            view.setRowHidden(i, False)
+
+        if khoa=="Tất cả Khoa":
+            pass
+        if khoa=="Hệ thống thông tin":
+            view.setRowHidden(1, True)
+            view.setRowHidden(2, True)
+            view.setRowHidden(3, True)
+            view.setRowHidden(4, True)
+            view.setRowHidden(7, True)
+            view.setRowHidden(8, True)
+        if khoa=="Kinh tế đối ngoại":
+            view.setRowHidden(3, True)
+            view.setRowHidden(4, True)
+            view.setRowHidden(5, True)
+            view.setRowHidden(6, True)
+            view.setRowHidden(7, True)
+            view.setRowHidden(8, True)
+        if khoa=="Tài chính ngân hàng":
+            view.setRowHidden(1, True)
+            view.setRowHidden(2, True)
+            view.setRowHidden(5, True)
+            view.setRowHidden(6, True)
+            view.setRowHidden(7, True)
+            view.setRowHidden(8, True)
+        if khoa =="Toán kinh tế":
+            view.setRowHidden(1, True)
+            view.setRowHidden(2, True)
+            view.setRowHidden(3, True)
+            view.setRowHidden(4, True)
+            view.setRowHidden(5, True)
+            view.setRowHidden(6, True)
+
     def add_sv(self):
         ten = self.txt_ho_ten.text().strip()
         mssv = self.txt_mssv.text().strip()
@@ -56,8 +97,9 @@ class MainWindow(Ui_MainWindow,QMainWindow):
             return
         try:
             kt_gpa=float(gpa) #Phải tách biệt ra riêng vì QTable chỉ nhận str
+            kt_mssv=int(mssv)
         except ValueError:
-            QMessageBox.warning(self, "Lỗi", "GPA phải là số")
+            QMessageBox.warning(self, "Lỗi", "GPA và MSSV phải là số")
             return
 
         #Kiểm tra xem sinh viên đã có trong ds chưa
@@ -112,6 +154,7 @@ class MainWindow(Ui_MainWindow,QMainWindow):
 
         # 4. Đẩy dữ liệu lên ComboBox Khoa
         self.comboBox.setCurrentText(khoa)
+        self.box_lop.setCurrentText(lop)
 
     def delete_sv(self):
 
@@ -140,6 +183,8 @@ class MainWindow(Ui_MainWindow,QMainWindow):
     def edit_sv(self):
         pass
     def loc_sv(self):
-        pass
+        khoa=self.cb_loc_khoa.currentText()
+        lop=self.cb_loc_lop.currentText()
+        gpa=self.cb_loc_GPA.currentText()
     def search_sv(self):
         pass

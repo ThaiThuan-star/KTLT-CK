@@ -48,17 +48,17 @@ class QuanLySinhVien:
     #Thêm sinh viên theo khoa
     def add_lop(self):
 
-        self.Khoa_HTTT.add_lop(self.ds_lop["415"])
-        self.Khoa_HTTT.add_lop(self.ds_lop["416"])
+        self.Khoa_HTTT.them_lop(self.ds_lop["415"])
+        self.Khoa_HTTT.them_lop(self.ds_lop["416"])
 
-        self.Khoa_TCNH.add_lop(self.ds_lop["411"])
-        self.Khoa_TCNH.add_lop(self.ds_lop["412"])
+        self.Khoa_TCNH.them_lop(self.ds_lop["411"])
+        self.Khoa_TCNH.them_lop(self.ds_lop["412"])
 
-        self.Khoa_KTDN.add_lop(self.ds_lop["413"])
-        self.Khoa_KTDN.add_lop(self.ds_lop["414"])
+        self.Khoa_KTDN.them_lop(self.ds_lop["413"])
+        self.Khoa_KTDN.them_lop(self.ds_lop["414"])
 
-        self.Khoa_TKT.add_lop(self.ds_lop["417"])
-        self.Khoa_TKT.add_lop(self.ds_lop["418"])
+        self.Khoa_TKT.them_lop(self.ds_lop["417"])
+        self.Khoa_TKT.them_lop(self.ds_lop["418"])
     def them_sv(self,ten,mssv,lop,khoa,gpa):
         self.ds_lop[lop].them_sv(SinhVien(ten,mssv,lop,khoa,gpa))
     def xoa_sv(self,mssv,lop):
@@ -92,7 +92,6 @@ class QuanLySinhVien:
                 }
 
     def save_json(self):
-
         data = {}
         for lop in self.ds_lop.values():
             for sv in lop.ds_sv.values():

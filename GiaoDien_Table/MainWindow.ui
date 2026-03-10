@@ -107,12 +107,59 @@
         </item>
         <item>
          <property name="text">
-          <string>K25416</string>
+          <string>411</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>K25417</string>
+          <string>412</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>413</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>414</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>415</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>416</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>417</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>418</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="cb_loc_GPA">
+        <property name="styleSheet">
+         <string notr="true">background: white; padding: 5px;</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>Thêm</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Xếp theo GPA</string>
          </property>
         </item>
        </widget>
