@@ -89,7 +89,7 @@ class QuanLySinhVien:
     def lay_ds_sv(self):
         return list(self.ds_sv_obj.values())
 
-    def ham_sap_xep(self, arr, ham_lay_gia_tri):
+    def ham_sap_xep(self, arr, ham_lay_gia_tqri):
         if len(arr) <= 1:
             return arr
         pivot = arr[-1]
