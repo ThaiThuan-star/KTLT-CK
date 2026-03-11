@@ -1,16 +1,4 @@
 {
-    "1777": {
-        "Tên": "shop Quần Áo Nguyễn Khang",
-        "Lớp": "411",
-        "Khoa": "Kinh tế đối ngoại",
-        "Gpa": 9.5
-    },
-    "1006": {
-        "Tên": "Nguyễn Văn A",
-        "Lớp": "413",
-        "Khoa": "Tài chính ngân hàng",
-        "Gpa": 9.0
-    },
     "1007": {
         "Tên": "Nguyễn Văn B",
         "Lớp": "413",
@@ -29,16 +17,22 @@
         "Khoa": "Hệ thống thông tin",
         "Gpa": 9.0
     },
-    "1788": {
-        "Tên": "Nguyễn Hoàng Minh Sang",
-        "Lớp": "416",
-        "Khoa": "Hệ thống thông tin",
-        "Gpa": 9.0
-    },
     "1757": {
         "Tên": "Trịnh Hoàng Anh ",
         "Lớp": "416",
         "Khoa": "Hệ thống thông tin",
+        "Gpa": 10.0
+    },
+    "1758": {
+        "Tên": "Phạm Quốc Đạt",
+        "Lớp": "416",
+        "Khoa": "Hệ thống thông tin",
+        "Gpa": 9.0
+    },
+    "1999": {
+        "Tên": "Trần Văn A",
+        "Lớp": "417",
+        "Khoa": "Toán kinh tế",
         "Gpa": 10.0
     }
 }

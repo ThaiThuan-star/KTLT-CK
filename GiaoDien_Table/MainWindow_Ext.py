@@ -6,7 +6,6 @@ from CLop import *
 from CKhoa import *
 from CQuanLySinhVien import *
 import json
-import os
 
 class MainWindow(Ui_MainWindow,QMainWindow):
     def setupUi(self,MainWindow):
@@ -181,6 +180,7 @@ class MainWindow(Ui_MainWindow,QMainWindow):
             # xóa trong bảng
             self.tbl_ds_them.removeRow(row)
             QMessageBox.information(self, "Thông báo", "Đã xóa sinh viên")
+            self.clear_input()
 
             """LƯU THAY ĐỔI TRONG DỮ LIỆU"""
 
@@ -390,7 +390,7 @@ class MainWindow(Ui_MainWindow,QMainWindow):
 
         #Phần này áp dụng kiến thức về thuật toán tìm kiếm
         if Binary_Search(ds_mssv,mssv_tim_kiem):
-            QMessageBox.warning(self, "Thông báo", "Tìm sinh viên thành công")
+            QMessageBox.information(self, "Thông báo", "Tìm sinh viên thành công")
             self.txt_ho_ten.setText(str(self.qly.ds_sv[mssv_tim_kiem]["Tên"]))
             self.txt_mssv.setText(str(mssv_tim_kiem))
             self.txt_gpa.setText(str(self.qly.ds_sv[mssv_tim_kiem]["Gpa"]))
