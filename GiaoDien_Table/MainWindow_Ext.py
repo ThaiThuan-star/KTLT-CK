@@ -104,11 +104,14 @@ class MainWindow(Ui_MainWindow,QMainWindow):
         lop = self.box_lop.currentText().strip()
         gpa = self.txt_gpa.text().strip()
         khoa = self.comboBox.currentText().strip()
-        if (not self.txt_ho_ten.text() or not self.txt_gpa.text()
-              or not self.txt_mssv.text() or self.box_lop.currentText()=="Lớp"
-                or self.comboBox.currentText()=="Khoa" ) :
+        if (not ten or not gpa or not mssv ) :
             QMessageBox.warning(self, "Lỗi nhập liệu", "Nhập thiếu dữ liệu")
             return
+
+        if lop=="Lớp" or khoa=="Khoa" :
+            QMessageBox.warning(self, "Lỗi nhập liệu", "Vui lòng nhập tên và lớp")
+            return
+
         try:
             kt_gpa=float(gpa) #Phải tách biệt ra riêng vì QTable chỉ nhận str
             kt_mssv=int(mssv)
@@ -192,7 +195,13 @@ class MainWindow(Ui_MainWindow,QMainWindow):
 
             return
     def edit_sv(self):
+
         row = self.tbl_ds_them.currentRow()
+
+        if row == -1:
+            QMessageBox.warning(self, "Thông báo", "Hãy chọn sinh viên cần sửa")
+            return
+
         lop_hien_tai=self.tbl_ds_them.item(row, 2).text()
         mssv_hientai=self.tbl_ds_them.item(row, 0).text()
 
@@ -203,20 +212,24 @@ class MainWindow(Ui_MainWindow,QMainWindow):
         gpa_moi=self.txt_gpa.text()
 
         #set lại trên table
-        if (not self.txt_ho_ten.text() or not self.txt_gpa.text()
-              or not self.txt_mssv.text() or self.box_lop.currentText()=="Lớp"
-                or self.comboBox.currentText()=="Khoa" ) :
+        #Cảnh báo khi người dùng chưa nhập dữ liệu
+        if (not ten_moi or not gpa_moi or not mssv_moi ) :
             QMessageBox.warning(self, "Lỗi nhập liệu", "Nhập thiếu dữ liệu")
             return
-        try:
-            kt_gpa=float(gpa_moi) #Phải tách biệt ra riêng vì QTable chỉ nhận str
+
+        if lop_moi=="Lớp" or khoa_moi=="Khoa" :
+            QMessageBox.warning(self, "Lỗi nhập liệu", "Vui lòng nhập tên và lớp")
+            return
+
+        try: #Kiểm tra người dùng có nhập đúng kiểu dữ liệu hay không
+            kt_gpa=float(gpa_moi)
             kt_mssv=int(mssv_moi)
         except ValueError:
             QMessageBox.warning(self, "Lỗi", "GPA và MSSV phải là số")
             return
 
         #Kiểm tra xem sinh viên đã có trùng không
-        if mssv_moi != mssv_hientai:
+        if mssv_moi != mssv_hientai: #Khi người dùng thay đổi mssv
             if mssv_moi in self.qly.ds_sv:
                 QMessageBox.warning(self, "Lỗi", "MSSV đã tồn tại")
                 return
@@ -377,6 +390,7 @@ class MainWindow(Ui_MainWindow,QMainWindow):
 
         #Phần này áp dụng kiến thức về thuật toán tìm kiếm
         if Binary_Search(ds_mssv,mssv_tim_kiem):
+            QMessageBox.warning(self, "Thông báo", "Tìm sinh viên thành công")
             self.txt_ho_ten.setText(str(self.qly.ds_sv[mssv_tim_kiem]["Tên"]))
             self.txt_mssv.setText(str(mssv_tim_kiem))
             self.txt_gpa.setText(str(self.qly.ds_sv[mssv_tim_kiem]["Gpa"]))
@@ -384,4 +398,4 @@ class MainWindow(Ui_MainWindow,QMainWindow):
             self.comboBox.setCurrentText(str(self.qly.ds_sv[mssv_tim_kiem]["Khoa"]))
         else:
             QMessageBox.warning(self, "Lỗi", "Không tìm thấy sinh viên")
-
+            return
