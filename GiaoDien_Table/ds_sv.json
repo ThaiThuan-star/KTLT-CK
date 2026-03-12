@@ -1,33 +1,27 @@
 {
-    "1007": {
-        "Tên": "Nguyễn Văn B",
-        "Lớp": "413",
-        "Khoa": "Tài chính ngân hàng",
-        "Gpa": 9.0
-    },
-    "1803": {
-        "Tên": "Nguyễn Thái Thuận",
-        "Lớp": "416",
-        "Khoa": "Hệ thống thông tin",
-        "Gpa": 8.69
-    },
-    "1801": {
-        "Tên": "Trần Cao Thịnh",
-        "Lớp": "416",
+    "112": {
+        "Tên": "Trần Anh DŨng",
+        "Lớp": "415",
         "Khoa": "Hệ thống thông tin",
         "Gpa": 9.0
     },
-    "1757": {
-        "Tên": "Trịnh Hoàng Anh ",
-        "Lớp": "416",
+    "10": {
+        "Tên": "Nguyễn Nhật Lâm",
+        "Lớp": "415",
         "Khoa": "Hệ thống thông tin",
-        "Gpa": 10.0
+        "Gpa": 111.0
     },
     "1758": {
         "Tên": "Phạm Quốc Đạt",
         "Lớp": "416",
         "Khoa": "Hệ thống thông tin",
         "Gpa": 9.0
+    },
+    "1757": {
+        "Tên": "Trịnh Anh Dũng",
+        "Lớp": "416",
+        "Khoa": "Hệ thống thông tin",
+        "Gpa": 10.0
     },
     "1999": {
         "Tên": "Trần Văn A",

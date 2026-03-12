@@ -12,7 +12,6 @@ class MainApp(QMainWindow,Ui_MainWindow):
         super().__init__()
         self.setupUi(self)
         self.user_manager = quanlydanhtinh()
-        self.main_window = None
 
         # Kết nối các nút chuyển trang
         self.btn_dk.clicked.connect(self.show_register)
@@ -23,7 +22,7 @@ class MainApp(QMainWindow,Ui_MainWindow):
         self.btn_dkc.clicked.connect(self.handle_register)
 
         # Nút ẩn/hiện mật khẩu
-        self.btn_eyemk.clicked.connect(lambda: self.toggle_password_visibility(self.txt_mk))
+        self.btn_eyemk.clicked.connect(lambda: self.toggle_password_visibility(self.txt_mk))  #Nếu k dùng thì nó tự chạy hàm toggle...
         self.btn_eyemk2.clicked.connect(lambda: self.toggle_password_visibility(self.txt_mk2))
         self.btn_eyenlmk.clicked.connect(lambda: self.toggle_password_visibility(self.txt_nlmk))
         # Đặt trang hiển thị ban đầu là đăng nhập (index 0)
@@ -53,14 +52,13 @@ class MainApp(QMainWindow,Ui_MainWindow):
             return
 
         # Kiểm tra đăng nhập
-        success, message = self.user_manager.dangnhap(username, password)
+        success, message = self.user_manager.dangnhap(username, password) #Lấy 2 giá trị từ hàm dangnhap
 
         if success:
             # TẠO ĐỐI TƯỢNG MÀN HÌNH CHÍNH
             self.main_window = MainWindow()
 
             # Kích hoạt giao diện (setupUi) cho màn hình chính
-            # Vì trong file MainWindow_Ext.py bạn để hàm setupUi(self, MainWindow)
             self.main_window.setupUi(self.main_window)
 
             # Hiển thị màn hình chính

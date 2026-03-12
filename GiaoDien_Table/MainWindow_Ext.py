@@ -1,5 +1,5 @@
 from PyQt6.QtWidgets import QTableWidgetItem,QMessageBox,QMainWindow,QHeaderView
-
+from chatAI_ext import ChatAIApp
 from MainWindow import Ui_MainWindow
 from CSinhVien import *
 from CLop import *
@@ -12,6 +12,7 @@ class MainWindow(Ui_MainWindow,QMainWindow):
         super().setupUi(MainWindow)
         self.MainWindow=MainWindow
 
+        self.chat_win = ChatAIApp()
         self.tbl_ds_them.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch) #Căn chỉnh bảng
         # Khởi tạo đối tượng quản lý (Tự động load JSON và phân khoa/lớp)
         self.qly=QuanLySinhVien()
@@ -56,6 +57,13 @@ class MainWindow(Ui_MainWindow,QMainWindow):
         self.btn_edit_sv.clicked.connect(self.edit_sv)
         self.btn_loc.clicked.connect(self.loc_sv)
         self.btn_search.clicked.connect(self.search_sv)
+        self.btn_ask_ai.clicked.connect(self.mo_khung_chat)
+
+    def mo_khung_chat(self):
+        if self.chat_win.isVisible():
+            self.chat_win.activateWindow()
+        else:
+            self.chat_win.show()
 
     def loc_lop(self):
         self.cb_loc_lop.setCurrentIndex(0)

@@ -54,11 +54,11 @@ class QuanLySinhVien:
         self.Khoa_HTTT.them_lop(self.ds_lop["415"])
         self.Khoa_HTTT.them_lop(self.ds_lop["416"])
 
-        self.Khoa_TCNH.them_lop(self.ds_lop["411"])
-        self.Khoa_TCNH.them_lop(self.ds_lop["412"])
+        self.Khoa_TCNH.them_lop(self.ds_lop["413"])
+        self.Khoa_TCNH.them_lop(self.ds_lop["414"])
 
-        self.Khoa_KTDN.them_lop(self.ds_lop["413"])
-        self.Khoa_KTDN.them_lop(self.ds_lop["414"])
+        self.Khoa_KTDN.them_lop(self.ds_lop["411"])
+        self.Khoa_KTDN.them_lop(self.ds_lop["412"])
 
         self.Khoa_TKT.them_lop(self.ds_lop["417"])
         self.Khoa_TKT.them_lop(self.ds_lop["418"])
@@ -78,8 +78,12 @@ class QuanLySinhVien:
         if lop_hientai == lop_moi:
             sv.update_info(ten_moi, mssv_moi, lop_hientai, khoa_moi, gpa_moi)
 
-        # nếu đổi lớp
-        else:
+            # Xóa hẳn đổi tượng cũ, thêm đối tượng mới luôn để đỡ mắc công cập nhật từng thông tin
+            del self.ds_lop[lop_hientai].ds_sv[mssv_hientai]
+            self.ds_lop[lop_hientai].ds_sv[mssv_moi] = sv
+
+        # nếu đổi lớp mới
+        else :
             lop_cu.xoa_sv(mssv_hientai)
             sv.update_info(ten_moi, mssv_moi, lop_moi, khoa_moi, gpa_moi)
 
