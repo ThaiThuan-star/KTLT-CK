@@ -25,15 +25,6 @@ class MainWindow(Ui_MainWindow,QMainWindow):
         self.cb_loc_khoa.currentTextChanged.connect(self.loc_lop)
         self.comboBox.currentTextChanged.connect(self.phatsinh)
 
-    def closeEvent(self, event):
-        try:
-            self.qly.save_json()
-            QMessageBox.information(self, "Thông báo", "Đã lưu dữ liệu thành công")
-        except:
-            QMessageBox.warning(self, "Cảnh báo", "Lưu dữ liệu không thành công")
-
-        event.accept()
-
     def process(self):
         """ Hiển thị danh sách sinh viên"""
         # Xóa trắng bảng trước khi bỏ dữ liệu vào ==> tránh trùng lặp

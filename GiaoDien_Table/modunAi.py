@@ -7,7 +7,7 @@ import os
 FILENAME = "ds_sv.json"
 
 # 1. Khởi tạo Client (Thay API Key của bạn vào đây)
-client = genai.Client(api_key="AIzaSyBwFxThqJWE8akdoJU-idZnlWJNR-5Sdrc")
+client = genai.Client(api_key="AIzaSyA5QUBphPRG_3ReJut4gTFv-HclAGFk58w")
 MODEL_ID = "models/gemini-flash-lite-latest" 
 
 
@@ -18,20 +18,48 @@ def tai_tao_data():
         with open(FILENAME, 'r', encoding='utf-8') as f:
             data = json.load(f)
         source = "DỮ LIỆU TỪ FILE"
+
     else:
-        khoa_list = ["HTTT", "TCNH", "KTDN", "TKT"]
-        data = []
-        for i in range(10): 
-            data.append({
-                "lop": f"CLASS_{i+1:02d}",
-                "khoa": random.choice(khoa_list),
-                "diem_thanh_phan": [random.randint(2, 10) for _ in range(10)],
-                "lich_su_nguy_cap": random.choice([True, False]), # Giả lập dữ liệu kỳ trước để AI xét 
-                "trang_thai": "Giai đoạn 1"
-            })
+        khoa_lop = {
+            "Hệ thống thông tin": ["415", "416"],
+            "Tài chính ngân hàng": ["413", "414"],
+            "Kinh tế đối ngoại": ["411", "412"],
+            "Toán kinh tế": ["417", "418"]
+        }
+
+        ho = ["Nguyễn", "Trần", "Lê", "Phạm", "Hoàng", "Vũ", "Đặng"]
+        ten_dem = ["Văn", "Anh", "Quốc", "Minh", "Thanh"]
+        ten = ["An", "Bình", "Dũng", "Đạt", "Lâm", "Phong", "Tuấn"]
+
+        data = {}
+
+        for i in range(20):
+
+            # MSSV random không trùng
+            while True:
+                mssv = str(random.randint(1000, 9999))
+                if mssv not in data:
+                    break
+
+            khoa = random.choice(list(khoa_lop.keys()))
+            lop = random.choice(khoa_lop[khoa])
+
+            ten_sv = f"{random.choice(ho)} {random.choice(ten_dem)} {random.choice(ten)}"
+
+            gpa = round(random.uniform(6, 10), 1)
+
+            data[mssv] = {
+                "Tên": ten_sv,
+                "Lớp": lop,
+                "Khoa": khoa,
+                "Gpa": gpa
+            }
+
         with open(FILENAME, 'w', encoding='utf-8') as f:
             json.dump(data, f, ensure_ascii=False, indent=4)
+
         source = "DỮ LIỆU TẠO NGẪU NHIÊN"
+
     return data, source
 
 

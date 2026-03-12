@@ -3,6 +3,9 @@ from CLop import *
 from CKhoa import *
 from Functions import *
 import json
+import os
+
+DATA_FILE= "ds_sv.json"
 
 class QuanLySinhVien:
     def __init__(self):
@@ -31,8 +34,13 @@ class QuanLySinhVien:
         self.add_lop()
 
     def load_json(self):
-        with open("ds_sv.json", "r", encoding="utf-8") as f:
-            self.ds_sv = json.load(f) #Bây giờ đang là hàm dict
+        if not os.path.exists(DATA_FILE):
+            return
+        try:
+            with open(DATA_FILE, "r", encoding="utf-8") as f:
+                self.ds_sv = json.load(f)
+        except json.JSONDecodeError:  #Nếu file json rỗng
+            self.ds_sv = {}
 
         for mssv, data in self.ds_sv.items():
             lop = data["Lớp"]
